@@ -3,6 +3,10 @@ int calculate() {
 }
 
 double calculateDiscount(double value, double discount, bool percentual) {
+  if (value <= 0) {
+    throw ArgumentError('The value canot be less than zero or zero');
+  }
+
   if (percentual) {
     discount = (value * discount) / 100;
   }
@@ -11,3 +15,5 @@ double calculateDiscount(double value, double discount, bool percentual) {
   print(value);
   return value;
 }
+
+
